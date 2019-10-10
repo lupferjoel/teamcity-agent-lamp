@@ -10,10 +10,13 @@ RUN apt-get update && \
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && sudo apt-get dist-upgrade -y --no-install-recommends
 
 # Installing and start mysql
+RUN mkdir /var/lib/mysql
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends mysql-server && \
     usermod -d /var/lib/mysql/ mysql && \
     update-rc.d mysql defaults
-    
+
+#Fix the mysql
 RUN chown -R mysql:mysql /var/lib/mysql /var/run/mysqld && \
     service mysql start && \
     mvn -q verify site
