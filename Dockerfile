@@ -15,4 +15,4 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends my
     service mysql start && \
     update-rc.d mysql defaults
 
-CMD echo "Started." | wc -
+CMD /run-services.sh
