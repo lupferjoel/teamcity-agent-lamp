@@ -17,8 +17,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends my
     update-rc.d mysql defaults
 
 #Fix the mysql
-RUN chown -R mysql:mysql /var/lib/mysql /var/run/mysqld && \
-    service mysql start && \
-    mvn -q verify site
+RUN service mysql start
 
 CMD /run-services.sh
