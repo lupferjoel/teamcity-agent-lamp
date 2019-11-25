@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && sudo apt-get dist-upgrade -y --no-install-recommends
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-cache build-essential libsqlite3-dev ruby-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-cache build-essential libsqlite3-dev ruby-dev
 
 # INSTALL MAILCATCHER
 #https://gist.github.com/shark0der/28f55884a876f67c92ce
