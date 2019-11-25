@@ -43,8 +43,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends my
 
 #Fix the mysql
 RUN chown -R mysql:mysql /var/lib/mysql /var/run/mysqld && \
-    service mysql start && \
-    mvn -q verify site
+    service mysql start
+   
+#mvn -q verify site
 
 CMD /run-services.sh
 
