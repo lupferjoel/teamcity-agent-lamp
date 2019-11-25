@@ -5,10 +5,11 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     php-cli php-bz2 php-soap php-curl php-mbstring php-pdo \
     php-gd php-xml php-zip zip php-xdebug php-mysql && \
-    build-essential libsqlite3-dev ruby-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && sudo apt-get dist-upgrade -y --no-install-recommends
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get install build-essential libsqlite3-dev ruby-dev
 
 # INSTALL MAILCATCHER
 #https://gist.github.com/shark0der/28f55884a876f67c92ce
