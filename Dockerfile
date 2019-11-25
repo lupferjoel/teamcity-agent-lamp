@@ -24,7 +24,7 @@ RUN apt-get install -y --no-install-recommends mysql-server && \
 #Fix the mysql
 RUN chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
 
-RUN service mysql start
+# RUN service mysql start
 
 # INSTALL MAILCATCHER
 #https://gist.github.com/shark0der/28f55884a876f67c92ce
